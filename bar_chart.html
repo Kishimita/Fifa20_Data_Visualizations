@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bokeh Plot</title>
+    <style>
+      html, body {
+        box-sizing: border-box;
+        display: flow-root;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+  </head>
+  <body>
+    <div id="b1e93e69-3811-4e90-8963-df9b75549ea2" data-root-id="p4184" style="display: contents;"></div>
+  
+    <script type="application/json" id="bd2b3ea3-1053-4fad-87bd-0aadf9f81572">
+      {"2a55795b-7c91-4178-a08a-eb25a8b39ab7":{"version":"3.4.1","title":"Bokeh Application","roots":[{"type":"object","name":"Figure","id":"p4184","attributes":{"width":900,"height":350,"x_range":{"type":"object","name":"FactorRange","id":"p4194","attributes":{"factors":["CSA - AL","Sparta Praha","RCD Espanyol","Heracles Almelo","Astra Giurgiu","Benevento","Boca Juniors","Beijing Renhe FC","PSV"]}},"y_range":{"type":"object","name":"Range1d","id":"p4195","attributes":{"end":1000}},"x_scale":{"type":"object","name":"CategoricalScale","id":"p4196"},"y_scale":{"type":"object","name":"LinearScale","id":"p4197"},"title":{"type":"object","name":"Title","id":"p4187","attributes":{"text":"Total Wage bill of Club"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p4214","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p4181","attributes":{"selected":{"type":"object","name":"Selection","id":"p4182","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p4183"},"data":{"type":"map","entries":[["club",["CSA - AL","Sparta Praha","RCD Espanyol","Heracles Almelo","Astra Giurgiu","Benevento","Boca Juniors","Beijing Renhe FC","PSV"]],["wage_eur",[17000,1000,26000,5000,4000,3000,23000,19000,22000]],["release_clause_eur",[18100000.0,23100000.0,47200000.0,3300000.0,743000.0,1600000.0,9800000.0,11600000.0,44300000.0]],["contract_valid_until",[2022.0,2020.0,2022.0,2021.0,2020.0,2020.0,2020.0,2019.0,2023.0]],["club_total_wage_bill",[158000,28000,552000,61000,73000,67000,456000,101000,367000]],["rels_total",[86688000.0,224854000.0,413680000.0,31857000.0,24105000.0,66131000.0,224207000.0,27505000.0,347798000.0]],["club_total_wage_bill_in_thousands",[158.0,28.0,552.0,61.0,73.0,67.0,456.0,101.0,367.0]],["color",["#4477AA","#EE6677","#228833","#CCBB44","#66CCEE","#AA3377","#0072B2","#E69F00","#F0E442"]]]}}},"view":{"type":"object","name":"CDSView","id":"p4215","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p4216"}}},"glyph":{"type":"object","name":"VBar","id":"p4211","attributes":{"x":{"type":"field","field":"club"},"width":{"type":"value","value":0.5},"top":{"type":"field","field":"club_total_wage_bill_in_thousands"},"line_color":{"type":"field","field":"color"},"fill_color":{"type":"field","field":"color"},"hatch_color":{"type":"field","field":"color"}}},"nonselection_glyph":{"type":"object","name":"VBar","id":"p4212","attributes":{"x":{"type":"field","field":"club"},"width":{"type":"value","value":0.5},"top":{"type":"field","field":"club_total_wage_bill_in_thousands"},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"VBar","id":"p4213","attributes":{"x":{"type":"field","field":"club"},"width":{"type":"value","value":0.5},"top":{"type":"field","field":"club_total_wage_bill_in_thousands"},"line_color":{"type":"field","field":"color"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"field","field":"color"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p4193","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p4219"},{"type":"object","name":"ZoomInTool","id":"p4220","attributes":{"renderers":"auto"}},{"type":"object","name":"ZoomOutTool","id":"p4221","attributes":{"renderers":"auto"}},{"type":"object","name":"ResetTool","id":"p4222"}]}},"toolbar_location":null,"left":[{"type":"object","name":"LinearAxis","id":"p4203","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p4204","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p4205"},"axis_label":"club_total_wage_bill_in_thousands","major_label_policy":{"type":"object","name":"AllLabels","id":"p4206"},"major_label_text_font_size":"10pt"}}],"below":[{"type":"object","name":"CategoricalAxis","id":"p4198","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p4199"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p4200"},"axis_label":"Clubs","major_label_policy":{"type":"object","name":"AllLabels","id":"p4201"},"major_label_text_font_size":"10pt"}}],"center":[{"type":"object","name":"Grid","id":"p4202","attributes":{"axis":{"id":"p4198"},"grid_line_color":null}},{"type":"object","name":"Grid","id":"p4207","attributes":{"dimension":1,"axis":{"id":"p4203"}}},{"type":"object","name":"Legend","id":"p4217","attributes":{"location":"top_center","orientation":"horizontal","border_line_color":"black","items":[{"type":"object","name":"LegendItem","id":"p4218","attributes":{"label":{"type":"field","field":"club"},"renderers":[{"id":"p4214"}]}}]}}]}}]}}
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('bd2b3ea3-1053-4fad-87bd-0aadf9f81572').textContent;
+              const render_items = [{"docid":"2a55795b-7c91-4178-a08a-eb25a8b39ab7","roots":{"p4184":"b1e93e69-3811-4e90-8963-df9b75549ea2"},"root_ids":["p4184"]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
+</html>

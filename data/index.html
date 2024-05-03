@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>FIFA 20 Player Treemap</title>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#chart {
+    width: 100%;
+    height: 600px;
+}
+</style>
+</head>
+<body>
+<div id="chart"></div>
+<script>
+// Load the FIFA 20 player data
+// Load the FIFA 20 player data
+const data = fetch('fifa20_players.json')
+  .then(response => response.json())
+  .then(data => {
+    // Use the data here
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error loading FIFA 20 player data:', error);
+  });
+
+
+// Create the treemap layout
+const treemap = d3.treemap()
+    .size([window.innerWidth, 600])
+    .padding(1);
+
+// Create the root node
+const root = d3.hierarchy(groupByNationality(data))
+    .sum(d => d.overall)
+    .sort((a, b) => b.value - a.value);
+
+treemap(root);
+
+// Create the SVG container
+const svg = d3.select('#chart')
+    .append('svg')
+    .attr('width', '100%')
+    .attr('height', '600px');
+
+// Draw the treemap circles
+svg.selectAll('circle')
+    .data(root.leaves())
+    .enter().append('circle')
+    .attr('cx', d => d.x0 + (d.x1 - d.x0) / 2)
+    .attr('cy', d => d.y0 + (d.y1 - d.y0) / 2)
+    .attr('r', d => Math.min(d.x1 - d.x0, d.y1 - d.y0) / 2)
+    .style('fill', d => d.data.nationality)
+    .on('click', (event, d) => showPlayerInfo(d.data));
+
+// Function to group the players by nationality
+function groupByNationality(data) {
+    const nationalityMap = {};
+    data.forEach(player => {
+    if (!nationalityMap[player.nationality]) {
+        nationalityMap[player.nationality] = { name: player.nationality, children: [] };
+    }
+    nationalityMap[player.nationality].children.push(player);
+    });
+    return Object.values(nationalityMap);
+}
+
+// Function to display player information on click
+function showPlayerInfo(player) {
+    alert(`
+    Player Name: ${player.short_name}
+    Nationality: ${player.nationality}
+    Club: ${player.club}
+    Overall Rating: ${player.overall}
+    `);
+}
+</script>
+</body>
+</html>
